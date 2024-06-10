@@ -1,0 +1,6 @@
+<div class="carousel-container">
+    <img *ngFor="let slide of slides; let i = index" [src]="slide" alt="Slide {{i + 1}}"
+        [class.active]="i === currentSlideIndex">
+</div>
+<button (click)="prevSlide()">Previous</button>
+<button (click)="nextSlide()">Next</button>

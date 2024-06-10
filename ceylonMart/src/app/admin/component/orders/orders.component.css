@@ -1,0 +1,175 @@
+.top {
+    width: auto;
+    padding: 20px;
+
+    /* background-color: aqua; */
+
+    button {
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        margin: 1px;
+        background-color: #133955;
+    }
+
+    button.checked {
+        background-color: aliceblue;
+    }
+
+    button:hover {
+        background-color: darkorange;
+    }
+
+    .order {
+        border-top-left-radius: 8px;
+    }
+
+    .order.clicked {
+        background-color: darkorange;
+    }
+
+    .cus {
+        border-top-right-radius: 8px;
+    }
+
+    .cus.clicked {
+        background-color: darkorange;
+    }
+}
+
+/* -------------customization---------------------------------------- */
+.orderDiv,
+.cusDiv {
+    position: relative;
+    padding: 10px;
+    /* background-color: brown; */
+    width: auto;
+    max-width: 170vh;
+    min-height: 50vh;
+    height: auto;
+    border-radius: 10px;
+}
+
+#btnAccept {
+    padding: 7px;
+    background-color: lightseagreen;
+    border: none;
+    margin: 2px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#btnAccept:hover{
+    background-color: forestgreen;
+}
+
+#btnReject {
+    padding: 7px;
+    background-color: crimson;
+    border: none;
+    margin: 2px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#btnReject:hover{
+    background-color: darkred;
+}
+
+#btnView {
+    padding: 7px;
+    background-color: lightskyblue;
+    border: none;
+    margin: 2px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#btnView:hover{
+    background-color:dodgerblue;
+}
+
+.details {
+    position: fixed;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 100px;
+    min-height: 80vh;
+    height: auto;
+    border-radius: 20px;
+    width: 70vh;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    /* background-color: rgb(124, 95, 160); */
+    padding: 10px;
+
+    table {
+        width: 200px;
+        border: none;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        margin: 5px;
+
+        tr {
+            margin: 3px;
+        }
+
+    }
+
+    textarea {
+        max-width: 60vh;
+        width: 60vh;
+        min-width: 60vh;
+        min-height: 10vh;
+        border: none;
+        border-radius: 20px;
+        font-size: large;
+        padding: 10px;
+        cursor: copy;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.cusDiv {
+    .mainTable {
+
+        padding: 8px;
+
+        td {
+            margin: 2px;
+        }
+
+        th {
+            background-color: cornflowerblue;
+            padding: 5px;
+            font-size: large;
+            font-weight: 400;
+            color: aliceblue;
+        }
+    }
+
+}
+
+
+/* ------------------Order--------Style------------------------- */
+.orderTable{
+    /* background-color: #133955; */
+    text-align: center;
+    th{
+        background-color: lightslategray;
+        margin: 5px;
+        padding: 5px;
+        border: none;
+        border-radius: 6px;
+    }
+    td{
+        background-color: lightblue;
+        border-radius: 5px;
+    }
+}

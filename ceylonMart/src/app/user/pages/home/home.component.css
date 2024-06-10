@@ -1,0 +1,11 @@
+.wrapper{
+    /* padding-top: 5; */
+    position: relative;
+}
+.image img{
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+#hm{
+  color: darkgoldenrod;
+}

@@ -1,0 +1,20 @@
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo">
+        <!-- <img src="/assets/logoC.png" alt="" height="40px"> -->
+        <img src="/assets/logo.png" alt="" height="65px">
+    </div>
+    <ul>
+        <li routerLink="welcome"><img src="/assets/admin/dashboard.png" alt="" width="28px">&nbsp;&nbsp;Dashboard</li>
+        <li routerLink="product"><img src="/assets/admin/product.png" alt="" width="28px">&nbsp;&nbsp;Products</li>
+        <li routerLink="order"><img src="/assets/admin/order.png" alt="" width="28px">&nbsp;&nbsp;Orders</li>
+        <li routerLink="customer"><img src="/assets/admin/customer.png" alt="" width="28px">&nbsp;&nbsp;Customers</li>
+        <!-- <li routerLink="setting"><img src="/assets/admin/settings.png" alt="" width="28px">&nbsp;&nbsp;Settings</li> -->
+    </ul>
+    <button class="btnLogout" (click)="logout()">Logout</button>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

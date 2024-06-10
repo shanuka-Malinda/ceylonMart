@@ -1,0 +1,67 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 2s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    /* Ensures slides fill the entire carousel width */
+    height: 300px;
+    /* Adjust height as needed */
+    object-fit: cover;
+    /* Scales images to fit the slide */
+}
+
+.slide.active {
+    transform: translateX(0);
+}
+
+.slide:not(.active) {
+    transform: translateX(100%);
+    /* Adjust for multiple slides */
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.carousel:hover .navigation {
+    opacity: 1;
+}
+
+.control {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: transparent;
+    /* Ensures buttons blend with background */
+    cursor: pointer;
+    border: none;
+}
+
+.control:hover {
+    opacity: 0.8;
+}
+
+.control-prev {
+    left: 10px;
+}
+
+.control-next {
+    right: 10px;
+}

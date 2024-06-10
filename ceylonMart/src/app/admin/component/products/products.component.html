@@ -1,0 +1,98 @@
+<div class="addProduct">
+
+    <div class="container">
+        <div class="header">
+            <label for="">Add new product</label>
+        </div>
+        <form (ngSubmit)="submitProduct()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" [(ngModel)]="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" [(ngModel)]="description" name="description" class="form-control" rows="3"
+                    required></textarea>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" [(ngModel)]="price" name="price" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="qty">Quantity</label>
+                    <input type="number" id="qty" [(ngModel)]="qty" name="qty" class="form-control" required>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="form-group" style="min-width: 200px;">
+                    <label for="category">Category</label>
+                    <select id="category" [(ngModel)]="category" name="category" class="form-control" required>
+                        <option *ngFor="let cat of categories" [value]="cat.categoryId">{{ cat.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group" style="min-width: 200px;">
+                    <label for="commonStatus">Status</label>
+                    <select id="commonStatus" [(ngModel)]="commonStatus" name="commonStatus" class="form-control">
+                        <option value="ACTIVE">Active</option>
+                        <option value="INACTIVE">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" (change)="onFileSelected($event)" class="form-control">
+                <!-- <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="img-thumbnail mt-2"> -->
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="isUploading" style="width: 90px;">Save</button>
+            <div class="progress-spinner">
+                <mat-spinner *ngIf="isUploading" diameter="30"></mat-spinner>
+            </div>
+        </form>
+    </div>
+    <div class="imagePreview">
+
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="img-thumbnail mt-2" height="450"
+            width="400">
+    </div>
+
+</div>
+
+<div class="viewProduct">
+    <div class="header">
+        <label for="">Product list</label>
+    </div>
+    <div class="productList">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Image Url</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let product of productList">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.qty}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.commonStatus}}</td>
+                <td><img src="{{product.imageUrl}}" alt="" height="35px"></td>
+                <!-- <td>{{product.imageUrl}}</td> -->
+                <td>
+                    <button class="update" (click)="openDialog(product)">Update</button>
+                    <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Add file input for image upload if needed -->

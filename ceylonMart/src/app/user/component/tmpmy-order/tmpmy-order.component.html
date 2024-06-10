@@ -1,0 +1,43 @@
+<div class="order-list">
+    <h2>My Orders</h2>
+    <div *ngIf="orders && orders.length > 0; else noOrders">
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Quantity</th>
+                    <th>Order Date</th>
+                    <th>Amount</th>
+                    <!-- <th>Transaction ID</th> -->
+                    <th>Product ID</th>
+                    <th>Product URL</th>
+                    <!-- <th>User ID</th> -->
+                    <th>User Name</th>
+                    <th>User Address</th>
+                    <th>User Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.orderId }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.orderDate }}</td>
+                    <td>{{ order.amount }}</td>
+                    <!-- <td>{{ order.transactionId }}</td> -->
+                    <td>{{ order.productId }}</td>
+                    <td>
+                        <img [src]="order.productUrl" alt="" width="60px" height="60px">
+                        <!-- <a [href]="order.productUrl" target="_blank">{{ order.productUrl }}</a> -->
+                    </td>
+                    <!-- <td>{{ order.userId }}</td> -->
+                    <td>{{ order.userName }}</td>
+                    <td>{{ order.userAddress }}</td>
+                    <td>{{ order.userEmail }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #noOrders>
+        <p>No orders found.</p>
+    </ng-template>
+</div>

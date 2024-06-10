@@ -1,0 +1,52 @@
+<div class="mainfnl">
+    <div class="filter">
+        <label for="category-select">Filter Product</label>
+        <select id="category-select" [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+            <option value="0" selected>All Products</option>
+            <option *ngFor="let cat of categories" [value]="cat.categoryId">{{ cat.name }}</option>
+        </select>
+    </div>
+    
+    <div>
+        <div *ngIf="products.length > 0">
+            <div class="lay">
+                <div class="product-card" *ngFor="let product of products">
+                    <div class="card-image">
+                        <img src="{{product.imageUrl}}" alt="Product Image">
+                        <button class="orderNow" (click)="openProductDetail(product)">Order Now</button>
+                    </div>
+                    <div class="card-content">
+                        <h3>{{product.name}}({{product.categoryDto.name}})</h3>
+                        <p class="description">{{product.description}}</p>
+                        <div class="price-info">
+                            <span class="price">{{product.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="lay">
+            <div class="product-card" *ngFor="let productz of productList">
+                <div class="card-image">
+                    <img src="{{productz.imageUrl}}" alt="Product Image">
+                    <button class="orderNow" (click)="openProductDetail(productz)">Order Now</button>
+                </div>
+                <div class="card-content">
+                    <h3>{{productz.name}}({{productz.categoryDto.name}})</h3>
+                    <p class="description">{{productz.description}}</p>
+                    <div class="price-info">
+                        <span class="price">{{productz.price}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div *ngIf="products.length === 0">
+            <p>No products available for the selected category.</p>
+        </div>
+    
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<section>
+
+    <div class="container">
+        <div class="product-image">
+            <img [src]="product.imageUrl" alt="Product Image" class="product-pic">
+        </div>
+
+        <div class="product-details">
+            <header>
+                <h1 class="title">{{ product.name }}</h1>
+                <span class="pId">Product ID : {{product.id}}</span><br>
+                <span class="colorCat">CeylonMart prebuild product</span>
+                <div class="price">
+                    <span class="current">{{ product.price }} LKR</span>
+                </div>
+            </header>
+            <article>
+                <h5>Description</h5>
+                <p>{{ product.description }}</p>
+            </article>
+            <div class="controls">
+
+                <div class="qty">
+                    <h5>qty</h5>
+                    <input type="number" class="option" min="1" [(ngModel)]="quantity" value="1">
+                </div>
+            </div>
+            <div class="footer">
+                <button type="button" (click)="pay(quantity,product.price)">
+                    <span>Order Now</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>

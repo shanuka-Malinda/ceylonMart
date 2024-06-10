@@ -1,0 +1,86 @@
+<div class="top">
+  <Button (click)="displayDiv(1)" class="order" [ngClass]="{'clicked': clickedButton === 1}">Orders</Button>
+  <button (click)="displayDiv(2)" class="cus" [ngClass]="{'clicked': clickedButton === 2}">Customizations</button>
+</div>
+<div class="cusDiv" *ngIf="displayCus">
+  <table class="mainTable">
+    <tr>
+      <th>Order Id</th>
+      <th>User Id</th>
+      <th>Date</th>
+      <th>Email</th>
+      <th>Response</th>
+      <th>#</th>
+    </tr>
+    <tr *ngFor="let det of customList">
+      <td>{{det.id }}</td>
+      <td>{{det.userId}}</td>
+      <td>{{det.date}}</td>
+      <td>{{det.email}}</td>
+      <td>
+        <button id="btnAccept" (click)="updateCustomizationStatusAccept()">ACCEPT</button>
+        <button id="btnReject" *ngIf="det.customizationStatus!='REJECT'" (click)="updateCustomizationStatusReject()">REJECT</button>
+      </td>
+      <td><button (click)="sedView(det)" id="btnView">View</button></td>
+    </tr>
+  </table>
+  <div class="details">
+    <h1>Product View</h1>
+
+    <img [src]="cImg" alt="Product Image" width="400px" height="400px">
+    <div>
+      <table>
+        <tr>
+          <td>Order ID </td>
+          <td>{{cId}}</td>
+        </tr>
+        <tr>
+          <td>User ID</td>
+          <td>{{cUserId}}</td>
+        </tr>
+        <tr>
+          <td>Contact No</td>
+          <td>{{cTel}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>{{cEmail}}</p>
+    <textarea name="" readonly>{{cDes}}</textarea>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="orderDiv" *ngIf="displayOrder">
+  <table class="orderTable">
+    <tr>
+      <th>Order ID</th>
+      <th>User ID</th>
+      <th>Order Date</th>
+      <th>Address</th>
+      <th>E-mail</th>
+      <th>Product ID</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+    </tr>
+    <tr *ngFor="let o of normalOrders">
+      <td>{{o.orderId}}</td>
+      <td>{{o.userId}}</td>
+      <td>{{o.orderDate}}</td>
+      <td>{{o.userAddress}}</td>
+      <td>{{o.userEmail}}</td>
+      <td>{{o.productId}}</td>
+      <td><img src="{{o.productUrl}}" alt="Product Image" width="70px" height="70px" style="border-radius:5px;"></td>
+      <td>{{o.quantity}}</td>
+      <td>{{o.amount}}</td>
+    </tr>
+  </table>
+</div>

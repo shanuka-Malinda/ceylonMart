@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <div class="header">
+        <label for="">Customer list</label>
+    </div>
+    <div class="table-container">
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>UserName</th>
+                    <th>E-mail</th>
+                    <th>Contact No</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customerList ">
+                    <td>{{customer.userId}} </td>
+                    <td>{{customer.userName}} </td>
+                    <td> {{customer.email}}</td>
+                    <td> {{customer.tel}}</td>
+                    <td>
+                        <span *ngFor="let role of customer.role">
+                            {{ role.roleName }}
+                        </span>
+                    </td>
+
+                </tr>
+
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <!-- <p>dwe{{customerList | json}}</p> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

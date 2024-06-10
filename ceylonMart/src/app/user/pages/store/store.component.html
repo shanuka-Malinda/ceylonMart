@@ -1,0 +1,39 @@
+<div class="main">
+  <!-- <div class="filter">
+    <h3>Search by category</h3>
+  </div> -->
+  <div class="productList">
+    <app-item-card></app-item-card>
+  </div>
+
+
+  <!-- <div>
+    <h1>Products by Category</h1>
+     
+    <label for="category-select">Select Category:</label>
+    <select id="category-select" [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+      <option *ngFor="let cat of categories" [value]="cat.categoryId">{{ cat.name }}</option>
+    </select>  
+  
+    <div *ngIf="products.length > 0">
+        <h2>Products in {{ selectedCategory }}</h2>
+      <div *ngFor="let product of products" class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Quantity: {{ product.qty }}</p>
+        <p>Price: {{ product.price | currency }}</p>
+        <img [src]="product.imageUrl" alt="{{ product.name }}">
+      </div>
+    </div>
+    <div *ngIf="products.length === 0">
+      <p>No products available for the selected category.</p>
+    </div>  
+
+  
+
+
+
+
+  </div> -->
+
+</div>

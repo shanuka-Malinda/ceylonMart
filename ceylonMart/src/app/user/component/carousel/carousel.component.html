@@ -1,0 +1,14 @@
+<div class="carousel" (mouseover)="handleHover(true)" (mouseleave)="handleHover(false)">
+    <div class="slides-container">
+        <img *ngFor="let image of images; let i = index" [src]="image" class="slide"
+            [ngClass]="{ 'active': i === currentSlide }">
+    </div>
+    <div class="navigation" *ngIf="!isHovering">
+        <button class="control control-prev" (click)="prevSlide()">&#8249;</button>
+        <button class="control control-next" (click)="nextSlide()">&#8250;</button>
+    </div>
+    <div class="dots">
+        <span *ngFor="let image of images; let i = index" class="dot" [ngClass]="{ 'active': i === currentSlide }"
+            (click)="currentSlide = i"></span>
+    </div>
+</div>

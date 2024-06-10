@@ -1,0 +1,131 @@
+.mainfnl {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.filter {
+    border-radius: 5px;
+    /* background-color: cornflowerblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 400px;
+    height: 50vh;
+    margin-left: 20px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        gainsboro 5px 10px 15px;
+
+    label {
+        font-size: large;
+    }
+    select{
+        width: 150px;
+        height: 35px;
+        text-transform: uppercase;
+
+        option{
+            padding: 10px;
+            text-align: center;
+            margin: 3px;
+            border-radius: 8px;
+        }
+    }
+}
+
+.lay {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 7px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 250px;
+    /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 280px;
+    /* Adjust height as needed */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.orderNow {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(to right bottom, rgb(27, 133, 219), #0f0c29);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .orderNow {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.price-info {
+    display: flex;
+    justify-content: center;
+}
+
+.price-info .price {
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        /* Make cards full width on smaller screens */
+    }
+
+    .card-image img {
+        height: 150px;
+        /* Adjust height for smaller screens */
+    }
+}

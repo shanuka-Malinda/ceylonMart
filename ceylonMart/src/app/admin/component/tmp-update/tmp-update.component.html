@@ -1,0 +1,50 @@
+<div class="container">
+    <form (ngSubmit)="updateProduct()">
+        <div class="form-group">
+            <label for="name">Product ID</label>
+            <input type="text" id="id" [(ngModel)]="id" name="id" class="form-control" readonly >
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" [(ngModel)]="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" [(ngModel)]="description" name="description" class="form-control" rows="3"
+                required></textarea>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" [(ngModel)]="price" name="price" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="qty">Quantity</label>
+                <input type="number" id="qty" [(ngModel)]="qty" name="qty" class="form-control" required>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <div class="form-group" style="min-width: 200px;">
+                <label for="category">Category</label>
+                <select id="category" [(ngModel)]="category" name="category" class="form-control" required>
+                    <option *ngFor="let cat of categories" [value]="cat.categoryId">{{ cat.name }}</option>
+                </select>
+            </div>
+            <div class="form-group" style="min-width: 200px;">
+                <label for="commonStatus">Status</label>
+                <select id="commonStatus" [(ngModel)]="commonStatus" name="commonStatus" class="form-control">
+                    <option value="ACTIVE">Active</option>
+                    <option value="INACTIVE">Inactive</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" (change)="onFileSelected($event)" class="form-control">
+            <!-- <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="img-thumbnail mt-2"> -->
+        </div>
+    
+        <button type="submit" class="btn btn-primary" [disabled]="isUploading" style="width: 90px;">Update</button>
+        <mat-spinner *ngIf="isUploading" class="progress-spinner" diameter="30"></mat-spinner>
+    </form>
+</div>

@@ -1,0 +1,102 @@
+<div class="cusReg">
+    <div class="register-form">
+        <form>
+            <div class="cusItemdetail">
+                <div class="form-group">
+                    <!-- <label for="title">Tiltle</label>
+                    <input type="text" id="title" name="title" ngModel required> -->
+                    <h1>Customize Your Product</h1>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" [(ngModel)]="description" required></textarea>
+                </div>
+            </div>
+            <ngx-file-drop [showBrowseBtn]="true" [browseBtnLabel]="'Upload Iamge'" (onFileDrop)="dropped($event)"
+                (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+            </ngx-file-drop>
+            <button class="requestOrder" type="submit" (click)="onSubmit()">Reuest Order</button>
+        </form>
+        <div class="previewImg">
+            <label>Image Preview</label>
+            <div *ngIf="imagePreview" class="image-preview">
+                <img [src]="imagePreview" alt="Image Preview">
+            </div>
+
+        </div>
+        <div class="martIcon">
+            <img src="/assets/martIcon.png" alt="" width="500px">
+            <!-- <mat-spinner *ngIf="isUploading" class="progress-spinner" diameter="30"></mat-spinner> -->
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="cotainer">
+    <div class="des">
+        <img src="/assets/admin/brush.png" alt="Product Image" width="64px" class="brush">
+        <h1>Customize your own Design....</h1>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Our custom furniture design tool allows users to create and customize their own furniture pieces.
+            With this tool, users can draw their furniture designs directly within the app using easy-to-use drawing
+            tools. They can also upload photos of existing furniture or inspiration images and edit them to fit their
+            vision.
+            This tool makes it easy for anyone to design unique and personalized furniture that suits their style and
+            needs.
+        </p>
+        <section>
+            <img src="/assets/admin/canvas.png" alt="Product Image" width="64px">
+            <span>Try our canvas </span>
+        </section>
+    </div>
+    <div class="canvas">
+        <div class="ctrl">
+            <button (click)="toggleEraser()" id="pen">
+                {{ isEraser ? 'Pen' : 'Eraser' }}
+            </button>
+            <button (click)="clearCanvas()"><img src="/assets/admin/bin.png" alt="Product Image" width="32px">
+                <span class="tooltip">Clear All</span>
+            </button>
+
+            <button (click)="saveAsPng()"> <img src="/assets/admin/save.png" alt="Product Image" width="32px">
+                <span class="tooltip">Save as png</span>
+            </button>
+
+            <button (click)="copyToClipboard()"><img src="/assets/admin/copy.png" alt="Product Image" width="32px">
+                <span class="tooltip">Copy to clipboard</span>
+            </button>
+
+            <label for="file"><img src="/assets/admin/photo.png" alt="Product Image" width="38px">
+                <span class="tooltip">Upload Image</span>
+            </label>
+            <input type="file" id="file" (change)="loadImage($event)">
+        </div>
+
+        <canvas #canvas width="800" height="600" style="border:1px solid #000;"></canvas>
+
+    </div>
+</div>
+
+<div class="myCustomization">
+    <button (click)="getCustomizations(userId)">My Customizations</button>
+    <table>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Response</th>
+        </tr>
+        <tr *ngFor="let o of customizations">
+            <td>{{o.id}}</td>
+            <td>{{o.date}}</td>
+            <td>{{o.description}}</td>
+            <td><img src="{{o.imageUrl}}" alt="" width="50px" height="50px"></td>
+            <td>{{o.customizationStatus}}</td>
+        </tr>
+    </table>
+</div>

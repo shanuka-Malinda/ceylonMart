@@ -1,0 +1,61 @@
+<div class="img">
+        <span>
+                <h1>Welcome to the Admin Panel</h1>
+                <p>Manage your product and services</p>
+        </span>
+        <div class="bg"></div>
+        <img src="/assets/img/adminWall.jpg" alt="Product Image" class="wall">
+
+        <div class="icon">
+                <img src="/assets/admin/group.png" alt="Product Image" width="48px">
+                <img src="/assets/admin/pie-chart.png" alt="Product Image" width="48px">
+                <img src="/assets/admin/growth.png" alt="Product Image" width="48px">
+                <img src="/assets/admin/box.png" alt="Product Image" width="48px">
+                <img src="/assets/admin/credit-card.png" alt="Product Image" width="48px">
+        </div>
+</div>
+<div class="notification">
+        <div class="product">
+                <section class="notImg">
+                        <img src="/assets/admin/stocks.png" alt="Product Image" width="48px">
+                </section>
+                <section class="notDes">
+                        <p class="no"> {{productCount}}</p>
+                        <p>Available Product</p>
+                </section>
+                <button routerLink="/product">View Product</button>
+
+        </div>
+        <div class="customers">
+                <section class="notImg">
+                        <img src="/assets/admin/view.png" alt="Product Image" width="48px">
+                </section>
+                <section class="notDes">
+                        <p class="no">{{customerCount}}</p>
+                        <p>All Customers</p>
+                </section>
+                <button routerLink="/customer">View Customers</button>
+        </div>
+        <div class="newOrders" >
+                <section class="notImg">
+                        <img src="/assets/admin/order (1).png" alt="Product Image" width="48px">
+                </section>
+                <section class="notDes">
+                        <p class="no">{{orderCount}}</p>
+                        <p>New Orders</p>
+                </section>
+                <button routerLink="/order">View Orders</button>
+        </div>
+        <div class="customization">
+                <section class="notImg">
+                        <img src="/assets/admin/web-design.png" alt="Product Image" width="48px">
+                </section>
+                <section class="notDes">
+                        <p class="no">{{customization}}</p>
+                        <p>Customizations</p>
+                </section>
+                <button routerLink="/order">View Customizations</button>
+        </div>
+
+
+</div>
