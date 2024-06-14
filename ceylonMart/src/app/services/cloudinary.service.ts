@@ -6,8 +6,8 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class CloudinaryService {
-  private cloudName = 'dtaiwjicp';
-  private uploadPreset = 'ceylonMart_product';
+  private cloudName = '$$$$$$$$';
+  private uploadPreset = 'Yor_Preset';
   constructor(private http:HttpClient) { }
   uploadImage(file: File): Observable<any> {
     const url = `https://api.cloudinary.com/v1_1/${this.cloudName}/image/upload`;
